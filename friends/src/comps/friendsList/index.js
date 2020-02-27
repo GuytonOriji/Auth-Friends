@@ -1,7 +1,7 @@
 import React from 'react';
 import {Route, NavLink, Switch } from 'react-router-dom';
 import styled from "styled-components"
-import {Form,Input,Label,Button, Container} from 'reactstrap'
+import {Form,Input,Label,Button,Alert, Container} from 'reactstrap'
 import {axiosWithAuth} from '../utils/'
 
 class ListPage extends React.Component {
@@ -90,6 +90,21 @@ addFirend = val =>{
       
 logged in
 
+<div>
+{
+
+  this.state.friends && this.state.friends.map((homie,i)=>{
+      return(
+
+            <Alert color="dark" key={homie.id=i}>
+        Name:{homie.name}, Age: {homie.age}, Email: {homie.email}
+      </Alert>
+
+        )
+  })
+
+}
+</div>
 
 <div>
  
